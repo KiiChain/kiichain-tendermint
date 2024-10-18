@@ -250,7 +250,7 @@ func DefaultBaseConfig() BaseConfig {
 		FilterPeers: false,
 		DBBackend:   "goleveldb",
 		DBPath:      "data",
-		RootDir:     "/root/.sei",
+		RootDir:     "/root/.kiichain3",
 	}
 }
 
