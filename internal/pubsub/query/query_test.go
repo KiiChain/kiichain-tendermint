@@ -24,35 +24,35 @@ var apiEvents = []types.Event{
 	{
 		Type: "tm",
 		Attributes: []types.EventAttribute{
-			{Key: []byte("event"), Value: []byte("Tx")},
-			{Key: []byte("hash"), Value: []byte("XYZ")},
-			{Key: []byte("height"), Value: []byte("5")},
+			{Key: "event", Value: "Tx"},
+			{Key: "hash", Value: "XYZ"},
+			{Key: "height", Value: "5"},
 		},
 	},
 	{
 		Type: "rewards.withdraw",
 		Attributes: []types.EventAttribute{
-			{Key: []byte("address"), Value: []byte("AddrA")},
-			{Key: []byte("source"), Value: []byte("SrcX")},
-			{Key: []byte("amount"), Value: []byte("100")},
-			{Key: []byte("balance"), Value: []byte("1500")},
+			{Key: "address", Value: "AddrA"},
+			{Key: "source", Value: "SrcX"},
+			{Key: "amount", Value: "100"},
+			{Key: "balance", Value: "1500"},
 		},
 	},
 	{
 		Type: "rewards.withdraw",
 		Attributes: []types.EventAttribute{
-			{Key: []byte("address"), Value: []byte("AddrB")},
-			{Key: []byte("source"), Value: []byte("SrcY")},
-			{Key: []byte("amount"), Value: []byte("45")},
-			{Key: []byte("balance"), Value: []byte("999")},
+			{Key: "address", Value: "AddrB"},
+			{Key: "source", Value: "SrcY"},
+			{Key: "amount", Value: "45"},
+			{Key: "balance", Value: "999"},
 		},
 	},
 	{
 		Type: "transfer",
 		Attributes: []types.EventAttribute{
-			{Key: []byte("sender"), Value: []byte("AddrC")},
-			{Key: []byte("recipient"), Value: []byte("AddrD")},
-			{Key: []byte("amount"), Value: []byte("160")},
+			{Key: "sender", Value: "AddrC"},
+			{Key: "recipient", Value: "AddrD"},
+			{Key: "amount", Value: "160"},
 		},
 	},
 }
@@ -248,8 +248,8 @@ func newTestEvent(s string) types.Event {
 	for _, kv := range parts[1:] {
 		key, val := splitKV(kv)
 		event.Attributes = append(event.Attributes, types.EventAttribute{
-			Key:   []byte(key),
-			Value: []byte(val),
+			Key:   key,
+			Value: val,
 		})
 	}
 	return event

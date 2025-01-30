@@ -13,21 +13,21 @@ var testEvents = []types.Event{
 	{
 		Type: "tm.events",
 		Attributes: []types.EventAttribute{{
-			Key:   []byte("index"),
-			Value: []byte("25"),
+			Key:   "index",
+			Value: "25",
 		}, {
-			Key:   []byte("type"),
-			Value: []byte("NewBlock"),
+			Key:   "type",
+			Value: "NewBlock",
 		}},
 	},
 	{
 		Type: "abci.account",
 		Attributes: []types.EventAttribute{{
-			Key:   []byte("name"),
-			Value: []byte("Anya"),
+			Key:   "name",
+			Value: "Anya",
 		}, {
-			Key:   []byte("name"),
-			Value: []byte("Igor"),
+			Key:   "name",
+			Value: "Igor",
 		}},
 	},
 }
