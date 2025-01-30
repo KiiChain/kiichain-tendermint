@@ -414,8 +414,8 @@ func decompactEvents(compact map[string][]string) []abci.Event {
 			for key, vals := range kvs {
 				if i < len(vals) {
 					attributes = append(attributes, abci.EventAttribute{
-						Key:   []byte(key),
-						Value: []byte(vals[i]),
+						Key:   key,
+						Value: vals[i],
 					})
 				}
 			}

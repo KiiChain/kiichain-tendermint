@@ -53,8 +53,8 @@ var (
 		Type: strings.Split(EventTypeKey, ".")[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(strings.Split(EventTypeKey, ".")[1]),
-				Value: []byte(EventNewBlockValue),
+				Key:   strings.Split(EventTypeKey, ".")[1],
+				Value: EventNewBlockValue,
 			},
 		},
 	}
@@ -63,8 +63,8 @@ var (
 		Type: strings.Split(EventTypeKey, ".")[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(strings.Split(EventTypeKey, ".")[1]),
-				Value: []byte(EventNewBlockHeaderValue),
+				Key:   strings.Split(EventTypeKey, ".")[1],
+				Value: EventNewBlockHeaderValue,
 			},
 		},
 	}
@@ -73,8 +73,8 @@ var (
 		Type: strings.Split(EventTypeKey, ".")[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(strings.Split(EventTypeKey, ".")[1]),
-				Value: []byte(EventNewEvidenceValue),
+				Key:   strings.Split(EventTypeKey, ".")[1],
+				Value: EventNewEvidenceValue,
 			},
 		},
 	}
@@ -83,8 +83,8 @@ var (
 		Type: strings.Split(EventTypeKey, ".")[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(strings.Split(EventTypeKey, ".")[1]),
-				Value: []byte(EventTxValue),
+				Key:   strings.Split(EventTypeKey, ".")[1],
+				Value: EventTxValue,
 			},
 		},
 	}
@@ -516,7 +516,7 @@ func eventWithAttr(etype, value string) abci.Event {
 	return abci.Event{
 		Type: parts[0],
 		Attributes: []abci.EventAttribute{{
-			Key: []byte(parts[1]), Value: []byte(value),
+			Key: parts[1], Value: value,
 		}},
 	}
 }

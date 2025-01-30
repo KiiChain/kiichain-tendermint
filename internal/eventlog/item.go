@@ -52,7 +52,7 @@ func makeEvents(etype string, data types.EventData) []abci.Event {
 	base := []abci.Event{{
 		Type: tmTypeTag,
 		Attributes: []abci.EventAttribute{{
-			Key: []byte(tmTypeKey), Value: []byte(etype),
+			Key: tmTypeKey, Value: etype,
 		}},
 	}}
 	if evt, ok := data.(ABCIEventer); ok {

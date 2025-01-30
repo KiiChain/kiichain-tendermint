@@ -74,8 +74,8 @@ func (b *EventBus) Publish(eventValue string, eventData types.EventData) error {
 		Type: tokens[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(tokens[1]),
-				Value: []byte(eventValue),
+				Key:   tokens[1],
+				Value: eventValue,
 			},
 		},
 	}
@@ -139,8 +139,8 @@ func (b *EventBus) PublishEventTx(data types.EventDataTx) error {
 		Type: tokens[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(tokens[1]),
-				Value: []byte(fmt.Sprintf("%X", types.Tx(data.Tx).Hash())),
+				Key:   tokens[1],
+				Value: fmt.Sprintf("%X", types.Tx(data.Tx).Hash()),
 			},
 		},
 	})
@@ -150,8 +150,8 @@ func (b *EventBus) PublishEventTx(data types.EventDataTx) error {
 		Type: tokens[0],
 		Attributes: []abci.EventAttribute{
 			{
-				Key:   []byte(tokens[1]),
-				Value: []byte(fmt.Sprintf("%d", data.Height)),
+				Key:   tokens[1],
+				Value: fmt.Sprintf("%d", data.Height),
 			},
 		},
 	})
